@@ -1,6 +1,7 @@
-package model;
+package com.airbnb.model;
 
 public class Rental {
+
 
     private Room room;
     private SeasonType seasonType;

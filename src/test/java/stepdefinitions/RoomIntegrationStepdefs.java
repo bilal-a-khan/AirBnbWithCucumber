@@ -19,13 +19,16 @@ public class RoomIntegrationStepdefs {
         Assertions.assertNotNull(roomController);
     }
 
-    @When("I call the endpoint by name for rooms")
-    public void iCallTheEndpointByNameForRooms() {
-        room = roomController.findByName("Cliffhanger");
+    @When("I call the endpoint by {string} name for rooms")
+    public void iCallTheEndpointByNameForRooms(String roomName) {
+        room = roomController.findByName(roomName);
     }
 
-    @Then("Cliffhanger should return from the server")
-    public void cliffhangerShouldReturnFromTheServer() {
-        Assertions.assertEquals("Cliffhanger", room.getName());
+
+    @Then("{string} should return from the server")
+    public void roomShouldReturnFromTheServer(String roomName) {
+        Assertions.assertEquals(roomName, room.getName());
     }
+
+
 }

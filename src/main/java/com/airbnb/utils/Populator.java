@@ -22,8 +22,8 @@ public class Populator {
         roomRepository.save(room1);
 
         Room room2 = new Room();
-        room1.setName("Slickrock");
-        room1.setRate(125);
+        room2.setName("Slickrock");
+        room2.setRate(125);
         roomRepository.save(room2);
 
     }

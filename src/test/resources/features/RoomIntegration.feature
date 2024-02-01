@@ -1,6 +1,11 @@
 Feature: I want to able to integration test Spring endpoints
 
-  Scenario:
+  Scenario Outline:
     Given I have a Spring Endpoint
-    When I call the endpoint by name for rooms
-    Then Cliffhanger should return from the server
+    When I call the endpoint by <Room> name for rooms
+    Then <Room> should return from the server
+
+    Examples:
+      | Room          |
+      | "Cliffhanger" |
+      | "Slickrock" |
